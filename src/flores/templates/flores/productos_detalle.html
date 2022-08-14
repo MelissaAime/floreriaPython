@@ -1,0 +1,36 @@
+{% extends 'flores/base.html' %}
+
+{% block titulo %} Producto {% endblock titulo %}
+
+{% block contenido %}
+
+    <!-- Product section-->
+    <section class="py-5">
+        <div class="container px-4 px-lg-5 my-5">
+            <div class="row gx-4 gx-lg-5 align-items-center">
+                <div class="col-md-6"><img class="card-img-top mb-5 mb-md-0" src="https://dummyimage.com/600x500/dee2e6/6c757d.jpg" alt="..." /></div>
+                <div class="col-md-6">
+                    <!-- Product specie -->
+                    <div class="small mb-1">{{productos.especie}}</div>
+                    <!-- Product name-->
+                    <h1 class="display-5 fw-bolder">{{productos.nombre}}</h1>
+                    <!-- Product price -->
+                    <div class="fs-5 mb-5">
+                        <span>$ {{productos.precio}}</span>
+                    </div>
+                    <!-- Product details -->
+                    <p class="lead">{{productos.cuidados}}</p>
+                    <!-- Add to cart -->
+                    <div class="d-flex">
+                        <input class="form-control text-center me-3" id="inputQuantity" type="num" value="1" style="max-width: 3rem" />
+                        <button class="btn btn-outline-dark flex-shrink-0" type="button">
+                            <i class="bi-cart-fill me-1"></i>
+                            Agregar al carrito
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock contenido %}

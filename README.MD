@@ -1,3 +1,3 @@
 # Final project
 ## Python - CoderHouse
-Create by: * Melissa Aime *
+Create by: **Melissa Aime**
