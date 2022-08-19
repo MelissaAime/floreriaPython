@@ -1,16 +1,27 @@
 {% extends 'flores/base.html' %}
 
+{% block titulo %} Productos {% endblock titulo %}
+
 {% block contenido %}
 
     <!-- Header-->
     <header class="py-5" style="background-image: url('https://images.vexels.com/media/users/3/296778/raw/1e8d322eb68291e4a8ea6349f0ecf23e-dise-o-de-patr-n-de-jard-n-de-flores-de-acuarela.jpg')">
     </header>
 
+    <!-- Search form-->
+    <div class="container px-4 px-lg-5 mt-5">
+        <form method="get">
+            {{ form.as_table }}
+            <input type="submit" class="btn btn-dark px-5" value="Buscar">
+        </form>
+    </div>
+
+    <!-- Products list-->
     <div class="container px-4 px-lg-5 mt-5">
         <h2 class="p-4">Todos los productos:</h2>
         <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
             
-            {% for producto in object_list %}
+            {% for producto in productos_buscar %}
             
             <div class="col mb-5">
                     <div class="card h-100">
