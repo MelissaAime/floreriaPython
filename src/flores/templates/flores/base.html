@@ -18,7 +18,7 @@
     </head>
     <body>
         <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light sticky-top">
             <div class="container px-4 px-lg-5">
                 <a class="navbar-brand" href="{% url 'flores_inicio' %}">Las Flores</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
@@ -34,6 +34,8 @@
                                 <li><a class="dropdown-item" href="#!">Nuevos</a></li>
                             </ul>
                         </li>
+                        <li class="nav-item mx-5"><a class="nav-link" aria-current="page" href="{% url 'flores_acercademi'%}">Acerca de mi</a></li>
+
                     </ul>
 
                     {% if request.user.username%}
@@ -61,18 +63,8 @@
             </div>
         </nav>
 
-        <!-- Header-->
-        <header class="py-5" style="background-image: url('https://images.vexels.com/media/users/3/296778/raw/1e8d322eb68291e4a8ea6349f0ecf23e-dise-o-de-patr-n-de-jard-n-de-flores-de-acuarela.jpg')">
-            <div class="container px-4 py-5 px-lg-5 my-5">
-                <div class="text-center text-black">
-                    <h1 class="display-4 fw-bolder">Las Flores</h1>
-                    <p class="lead fw-bolder mb-0">Bienvenidos</p>
-                </div>
-            </div>
-        </header>
-
         <!-- Section-->
-        <section class="py-5">
+        <section>
             {% block contenido %}
             {% endblock contenido %}
         </section>

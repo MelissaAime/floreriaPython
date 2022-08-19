@@ -11,6 +11,10 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 def inicio(request):
     return render(request, 'flores/index.html')
 
+# Acerca de mi:
+def acercademi(request):
+    return render(request, 'flores/acercademi.html')
+
 # Listado de productos:
 class ProductosLista(ListView):
     model = Productos
