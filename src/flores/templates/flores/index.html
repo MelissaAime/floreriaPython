@@ -27,21 +27,45 @@
         <!-- Image-->
         <div class="bg-secondary my-5 py-5 rounded" style="background-image: url('https://images.vexels.com/media/users/3/296778/raw/1e8d322eb68291e4a8ea6349f0ecf23e-dise-o-de-patr-n-de-jard-n-de-flores-de-acuarela.jpg')">
         </div>
+        
         <!-- Content Row-->
         <div class="row gx-4 gx-lg-5">
             <div class="col-md-4 mb-5">
                 <div class="card h-100">
                     <div class="card-body">
                         <h2 class="card-title">Productos</h2>
-                        <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Rem magni quas ex numquam, maxime minus quam molestias corporis quod, ea minima accusamus.</p>
+                        <p class="card-text">Tenemos gran variedad de flores.</p>
                     </div>
                     <a class="btn btn-outline-dark m-5" href="{% url 'flores_productos' %}">
-                        <i class="bi-flower1 me-1"></i>
+                        <i class="bi bi-flower3 me-1"></i>
                         Ver más
                     </a>
                 </div>
             </div>
-            
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Acerca de mi</h2>
+                        <p class="card-text">Información acerca del sitio</p>
+                    </div>
+                    <a class="btn btn-outline-dark m-5" href="{% url 'flores_acercademi' %}">
+                        <i class="bi bi-info-circle-fill me-1"></i>
+                        Ver más
+                    </a>
+                </div>
+            </div>
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h2 class="card-title">Perfil</h2>
+                        <p class="card-text">Ver perfil completo</p>
+                    </div>
+                    <a class="btn btn-outline-dark m-5" href="{% url 'perfil' %}">
+                        <i class="bi-person-fill me-1"></i>
+                        Ver más
+                    </a>
+                </div>
+            </div>
         </div>
     </div>
 
