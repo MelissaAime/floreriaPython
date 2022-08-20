@@ -12,7 +12,7 @@
     <div class="container px-4 px-lg-5 my-5">
 
         <h2>Avatar</h2>
-        <a href="{% url 'avatar' %}">Agregar avatar</a>
+        <a href="{% url 'avatar' %}" class="nav-link pe-auto">Agregar avatar</a>
 
     </div>
 
@@ -28,8 +28,8 @@
         <form method="post">{% csrf_token %}
 
             {{formPerfil.as_p}}
-            <input type="submit" value="Editar">
-            <a href="{% url 'flores_inicio' %}">Cancelar</a>
+            <input type="submit" value="Editar" class="btn btn-outline-dark mx-5">
+            <a href="{% url 'flores_inicio' %}" class="pe-auto mx-5">Cancelar</a>
 
         </form>
 
