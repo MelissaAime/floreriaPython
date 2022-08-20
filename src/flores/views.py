@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from flores.models import Productos
 from flores.forms import FormBuscarProducto
-from django.views.generic import ListView, DetailView
+from django.views.generic import DetailView
 
 # Requerimiento de login 
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -10,15 +10,17 @@ from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Inicio:
 def inicio(request):
+
     return render(request, 'flores/index.html')
 
 # Acerca de mi:
 def acercademi(request):
+
     return render(request, 'flores/acercademi.html')
 
 # Busqueda de productos:
 def productos_buscar(request):
-    
+
     productos_lista = Productos.objects.all()
 
     if request.GET.get('producto_nombre'):

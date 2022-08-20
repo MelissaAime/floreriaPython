@@ -4,10 +4,11 @@ from profileuser.models import Avatar
 from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 
-#Mostrar perfil
+# Mostrar perfil
 @login_required
 def perfil(request):
-    return render(request, "profileuser/perfil.html")
+    avatar = Avatar.objects.filter(user=request.user).first()
+    return render(request, "profileuser/perfil.html", {"avatar": avatar.imagen.url})
 
 # Editar perfil del usuario
 @login_required
@@ -41,9 +42,11 @@ def editar_perfil(request):
 # Agregar un avatar
 @login_required
 def agregar_avatar(request):
+    avatar = Avatar.objects.filter(user=request.user).first()
+
     if request.method == "GET":
         formAvatar = AvatarForm()
-        contexto = {"formAvatar": formAvatar}
+        contexto = {"formAvatar": formAvatar, "avatar": avatar.imagen.url}
         return render(request, "profileuser/agregar_avatar.html", contexto)
         
     else:

@@ -11,19 +11,29 @@
     <!-- My profile-->
     <div class="container px-4 px-lg-5 my-5">
 
-        <h5>Usuario</h5>
-        <p>{{request.user.username}}</p>
+        <h5>Información del Perfil:</h5>
 
-        <h5>Imagen de Perfil</h5>
-
-        <h5>Email</h5>
-        <p>{{request.user.email}}</p>
-
-        <h5>Nombre y Apellido</h5>
-        <p>{{request.user.get_full_name}}</p>
+        <table class="table table-hover">
+            <tr>
+                <th>Usuario:</th>
+                <td>{{request.user.username}}</td>    
+            </tr>
+            <tr>
+                <th>Imagen de Perfil:</th>
+                <td><img src="{{avatar}}" alt="avatar" class="w-25"></td>
+            </tr>
+            <tr>
+                <th>Email:</th>
+                <td>{{request.user.email}}</td>
+            </tr>
+            <tr>
+                <th>Nombre y Apellido:</th>
+                <td>{{request.user.get_full_name}}</td>
+            </tr>
+ 
+        </table>
 
         <a href="{% url 'editar_perfil' %}">Editar Perfil</a>
-
     </div>
 
 {% endblock contenido %}

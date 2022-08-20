@@ -12,10 +12,11 @@
     <div class="container px-4 px-lg-5 my-5">
 
         <h2>Avatar</h2>
-        <img src="{{avatar}}">
+
+        <p>Avatar actual:</p>
+        <img src="{{avatar}}" class="w-50">
 
         <p>Cambiar avatar:</p>
-
         <form method="post" enctype="multipart/form-data"> {% csrf_token %}
             {{formAvatar.as_p}}
             <input type="submit" value="Cambiar">
