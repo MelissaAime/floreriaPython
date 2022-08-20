@@ -12,8 +12,8 @@ class UserEditForm(UserCreationForm):
 
     class Meta:
         model = User
-        fields = ['username', 'email', 'password1', 'password2', 'first_name', 'last_name']
-        help_texts = {"username": "", "email": "", "password1": "", "password2": ""}
+        fields = ['email', 'password1', 'password2', 'first_name', 'last_name']
+        help_texts = {"email": "", "password1": "", "password2": ""}
 
 
 class AvatarForm(Form):

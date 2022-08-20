@@ -1,0 +1,29 @@
+{% extends 'flores/base.html' %}
+
+{% block titulo %} Mi Perfil {% endblock titulo %}
+
+{% block contenido %}
+
+    <!-- Header-->
+    <header class="py-5" style="background-image: url('https://images.vexels.com/media/users/3/296778/raw/1e8d322eb68291e4a8ea6349f0ecf23e-dise-o-de-patr-n-de-jard-n-de-flores-de-acuarela.jpg')">
+    </header>
+
+    <!-- My profile-->
+    <div class="container px-4 px-lg-5 my-5">
+
+        <h5>Usuario</h5>
+        <p>{{request.user.username}}</p>
+
+        <h5>Imagen de Perfil</h5>
+
+        <h5>Email</h5>
+        <p>{{request.user.email}}</p>
+
+        <h5>Nombre y Apellido</h5>
+        <p>{{request.user.get_full_name}}</p>
+
+        <a href="{% url 'editar_perfil' %}">Editar Perfil</a>
+
+    </div>
+
+{% endblock contenido %}

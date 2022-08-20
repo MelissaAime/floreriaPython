@@ -1,6 +1,6 @@
 {% extends 'flores/base.html' %}
 
-{% block titulo %} Editar Perfil {% endblock titulo %}
+{% block titulo %} Agregar Avatar {% endblock titulo %}
 
 {% block contenido %}
 
@@ -12,28 +12,18 @@
     <div class="container px-4 px-lg-5 my-5">
 
         <h2>Avatar</h2>
-        <a href="{% url 'avatar' %}">Agregar avatar</a>
+        <img src="{{avatar}}">
 
-    </div>
+        <p>Cambiar avatar:</p>
 
-    <!-- Image-->
-    <div class="bg-secondary mx-4 py-3 rounded" style="background-image: url('https://images.vexels.com/media/users/3/296778/raw/1e8d322eb68291e4a8ea6349f0ecf23e-dise-o-de-patr-n-de-jard-n-de-flores-de-acuarela.jpg')">
-    </div>
-
-    <!-- Profile-->
-    <div class="container px-4 px-lg-5 my-5">
-
-        <h2>Editar información de {{request.user.username}}</h2>
-
-        <form method="post">{% csrf_token %}
-
-            {{formPerfil.as_p}}
-            <input type="submit" value="Editar">
+        <form method="post" enctype="multipart/form-data"> {% csrf_token %}
+            {{formAvatar.as_p}}
+            <input type="submit" value="Cambiar">
             <a href="{% url 'flores_inicio' %}">Cancelar</a>
-
         </form>
 
     </div>
+
 
     <!-- Image-->
     <div class="bg-secondary mx-4 my-5 py-3 rounded" style="background-image: url('https://images.vexels.com/media/users/3/296778/raw/1e8d322eb68291e4a8ea6349f0ecf23e-dise-o-de-patr-n-de-jard-n-de-flores-de-acuarela.jpg')">
