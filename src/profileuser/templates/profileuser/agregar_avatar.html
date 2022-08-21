@@ -20,7 +20,7 @@
         <form method="post" enctype="multipart/form-data"> {% csrf_token %}
             {{formAvatar.as_p}}
             <input type="submit" value="Cambiar" class="btn btn-outline-dark mx-5">
-            <a href="{% url 'flores_inicio' %}" class="pe-auto mx-5">Cancelar</a>
+            <a href="{% url 'flores_inicio' %}" class="btn btn-outline-dark mx-5">Cancelar</a>
         </form>
 
     </div>

@@ -41,6 +41,7 @@ INSTALLED_APPS = [
     'flores',
     'authentication',
     'profileuser',
+    'mensajes',
 ]
 
 MIDDLEWARE = [

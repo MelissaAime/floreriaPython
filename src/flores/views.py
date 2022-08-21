@@ -43,3 +43,8 @@ def productos_buscar(request):
 class ProductosDetalle(LoginRequiredMixin, DetailView):
     model = Productos
     template_name = 'flores/productos_detalle.html'
+
+
+
+
+

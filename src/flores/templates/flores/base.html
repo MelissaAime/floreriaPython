@@ -63,7 +63,20 @@
 
                                         <li><hr class="dropdown-divider" /></li>
 
+                                        <li><a class="dropdown-item" href="{% url 'mensajes' %}">
+                                            <i class="bi bi-envelope-open-fill me-1"></i>
+                                            Mensajes
+                                        </a></li>
+
+                                        <li><a class="dropdown-item" href="{% url 'enviar_mensajes' %}">
+                                            <i class="bi bi-reply-fill me-1"></i>
+                                            Enviar Mensaje
+                                        </a></li>
+
+                                        <li><hr class="dropdown-divider" /></li>
+
                                         <li><a class="dropdown-item" href="{% url 'logout' %}">
+                                            <i class="bi bi-x-circle-fill me-1"></i>
                                             Cerrar Sesión
                                         </a></li>
 

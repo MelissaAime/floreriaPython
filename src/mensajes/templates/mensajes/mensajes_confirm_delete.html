@@ -1,0 +1,26 @@
+{% extends 'flores/base.html' %}
+
+{% block contenido %}
+
+    <!-- Image-->
+    <div class="bg-secondary m-4 py-3 rounded" style="background-image: url('https://images.vexels.com/media/users/3/296778/raw/1e8d322eb68291e4a8ea6349f0ecf23e-dise-o-de-patr-n-de-jard-n-de-flores-de-acuarela.jpg')">
+    </div>
+
+    <!-- Content-->
+    <div class="container px-4 px-lg-5 m-2">
+    
+        <form method="post">{% csrf_token %}
+
+            <h3>Desea borrar el mensaje de: {{object.nombre}}</h3>
+            <input class="btn btn-outline-dark" type="submit" value="Confirmar">
+            <a class="btn btn-outline-dark" href="{% url 'mensajes' %}">Cancelar</a>
+
+        </form>
+    
+    </div>
+
+    <!-- Image-->
+    <div class="bg-secondary m-4 py-3 rounded" style="background-image: url('https://images.vexels.com/media/users/3/296778/raw/1e8d322eb68291e4a8ea6349f0ecf23e-dise-o-de-patr-n-de-jard-n-de-flores-de-acuarela.jpg')">
+    </div>
+
+{% endblock contenido %}

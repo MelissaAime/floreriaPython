@@ -1,0 +1,45 @@
+{% extends 'flores/base.html' %}
+
+{% block titulo %} Mensajes {% endblock titulo %}
+
+{% block contenido %}
+
+    <!-- Header-->
+    <header class="py-5" style="background-image: url('https://images.vexels.com/media/users/3/296778/raw/1e8d322eb68291e4a8ea6349f0ecf23e-dise-o-de-patr-n-de-jard-n-de-flores-de-acuarela.jpg')">
+    </header>
+
+    <!-- Content-->
+    <div class="container px-4 px-lg-5 m-2">
+        <h3 class="my-3 py-3">Mensajes recibidos:</h3>
+        <div class="row gx-4 gx-lg-5">
+
+            {% for mensaje in object_list %}
+            <div class="col-md-4 mb-5">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h4 class="card-title">De: {{mensaje.nombre}}</h4>
+                        <h6 class="card-subtitle mb-2 text-muted">{{mensaje.email}}</h6>
+                        <p class="card-text">{{mensaje.mensaje}} </p>
+                    </div>
+                    <a class="btn btn-outline-dark m-5" href="{% url 'borrar_mensaje' mensaje.id %}">
+                        <i class="bi bi-trash-fill me-1"></i>
+                        Borrar Mensaje
+                    </a>
+                </div>  
+            </div>
+
+            {% empty %}
+                <p>Sin mensajes</p>
+
+                <a class="nav-link pe-auto mx-2" href="{% url 'enviar_mensajes'%}"> Enviar un mensaje </a>
+
+            {% endfor %}
+            
+        </div>
+    </div>
+
+    <!-- Image-->
+    <div class="bg-secondary m-4 py-3 rounded" style="background-image: url('https://images.vexels.com/media/users/3/296778/raw/1e8d322eb68291e4a8ea6349f0ecf23e-dise-o-de-patr-n-de-jard-n-de-flores-de-acuarela.jpg')">
+    </div>
+    
+{% endblock contenido %}

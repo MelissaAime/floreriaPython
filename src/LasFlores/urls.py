@@ -22,7 +22,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include("flores.urls")),
     path('profile/', include("profileuser.urls")),
-    path('section/', include("authentication.urls"))
+    path('section/', include("authentication.urls")),
+    path('mensajes/', include("mensajes.urls"))
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
