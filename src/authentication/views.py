@@ -4,6 +4,7 @@ from django.shortcuts import render, redirect
 from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import login, authenticate, logout
 from authentication.forms import UserRegisterForm
+from django.contrib.auth.models import User
 
 # Loguearse:
 def login_view(request):
@@ -40,7 +41,21 @@ def register_view(request):
             return redirect("login")
         
         else:
-            return render(request, "authentication/register.html", {"form": form, "error": "Usuario no válido"})
+            # Error: si las contraseñas ingresadas son diferentes
+            error = ""
+            if request.POST["password1"] != request.POST["password2"]:
+                error = "La contraseña ingresada es diferente"
+                error
+
+            # Error usuario: si el usuario ingresado ya existe.
+            usuarios_lista = User.objects.all()
+            usuario_existente = ""
+
+            if usuarios_lista.filter(username=request.POST["username"]):
+                usuario_existente = "El usuario ingresado ya existe"
+                usuario_existente
+
+            return render(request, "authentication/register.html", {"form": form, "error": error, "usuario_existente": usuario_existente})
         
 
 #Desloguearse
